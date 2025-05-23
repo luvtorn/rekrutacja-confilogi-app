@@ -1,0 +1,56 @@
+@use "../../../styles/variables" as *;
+
+.button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  border: 1.5px solid transparent;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &--blue-solid {
+    background-color: $color-blue;
+    color: white;
+
+    &:hover {
+      background-color: transparent;
+      color: $color-blue;
+      border-color: $color-blue;
+    }
+  }
+
+  &--blue-outline {
+    background-color: transparent;
+    color: $color-blue;
+    border-color: $color-blue;
+
+    &:hover {
+      background-color: $color-blue-bg-hover;
+    }
+  }
+
+  &--gray-outline {
+    background-color: $color-gray-bg-hover;
+    color: $color-gray;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $color-gray;
+    }
+  }
+
+  &--red-outline {
+    background-color: $color-red;
+    color: #fff;
+    border-color: $color-red;
+    border-width: 2.3px;
+
+    &:hover {
+      background-color: #fff;
+      color: $color-red;
+    }
+  }
+}

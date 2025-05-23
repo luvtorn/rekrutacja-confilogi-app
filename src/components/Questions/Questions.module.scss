@@ -1,0 +1,72 @@
+@use "../../styles/variables" as *;
+
+.faq {
+  max-width: 600px;
+  margin: 150px auto;
+  padding: 40px 20px;
+  text-align: center;
+
+  h2 {
+		font-size: 2.5rem;
+    font-weight: 500;
+		color: #000;
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-size: 16px;
+    color: $color-gray;
+    margin-bottom: 50px;
+  }
+
+  .faq-item {
+    text-align: left;
+    border-top: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: 1px solid #eee;
+    }
+
+    .question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 400;
+      padding: 18px 0;
+      cursor: pointer;
+      color: black;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-red;
+      }
+
+      .icon {
+        font-size: 14px;
+        transition: transform 0.3s;
+
+        &.rotate {
+          transform: rotate(180deg);
+          color: $color-red;
+          fill: $color-red;
+        }
+      }
+    }
+
+    .answer {
+      font-size: 15px;
+      color: $color-gray;
+      padding-bottom: 20px;
+      line-height: 1.6;
+    }
+  }
+
+  .more-info {
+    margin-top: 40px;
+
+    button {
+      padding: 12px 24px;
+      font-weight: 400;
+    }
+  }
+}

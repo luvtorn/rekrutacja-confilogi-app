@@ -1,0 +1,133 @@
+@use "../../styles/variables" as *;
+
+.navigation {
+  background-color: white;
+  padding: 2rem 0;
+  width: 100%;
+  z-index: 1000;
+
+  &__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo img {
+    height: 25px;
+    width: auto;
+    z-index: 10;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 400;
+      color: hsl(229, 31%, 21%);
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-red;
+      }
+    }
+  }
+
+  &__button {
+    letter-spacing: 2px;
+  }
+
+  &__burger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__burger {
+      display: block;
+    }
+
+    &__links {
+      position: fixed;
+      inset: 0;
+      background: rgba($color-dark-blue, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2rem;
+      gap: 3rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+      overflow: hidden;
+
+      &.open {
+        transform: translateX(0);
+      }
+
+      &__topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0 0 0;
+      }
+
+      a {
+        color: white !important;
+        font-size: 1.5rem;
+      }
+
+      li {
+        border-bottom: 1px solid $color-gray;
+        padding-bottom: 1rem;
+        text-transform: uppercase;
+        width: 100vw;
+        text-align: center;
+      }
+
+      .navigation__button {
+        background: transparent;
+        border-color: white;
+        font-size: 1rem;
+        color: white;
+        text-transform: uppercase;
+        width: 50%;
+      }
+    }
+  }
+}

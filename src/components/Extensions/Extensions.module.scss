@@ -1,0 +1,47 @@
+@use "../../styles/variables" as *;
+
+.extensions {
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+
+  &__text {
+    margin-bottom: 2rem;
+    width: 50%;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: black;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $color-gray;
+      line-height: 1.5;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__text {
+      width: 100%;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
